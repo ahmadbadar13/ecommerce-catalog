@@ -18,12 +18,13 @@ html, body {
   align-items: center;
 }
 
+/* ================= BACKGROUND ================= */
 .women-bg {
   background: linear-gradient(
     to bottom,
     #fde2ff 0%,
     #fde2ff 65%,
-    #ffffff 50%,
+    #ffffff 65%,
     #ffffff 100%
   );
 }
@@ -33,7 +34,7 @@ html, body {
     to bottom,
     #d6e6ff 0%,
     #d6e6ff 65%,
-    #ffffff 50%,
+    #ffffff 65%,
     #ffffff 100%
   );
 }
@@ -43,7 +44,7 @@ html, body {
     to bottom,
     #dcdcdc 0%,
     #dcdcdc 65%,
-    #ffffff 50%,
+    #ffffff 65%,
     #ffffff 100%
   );
 }
@@ -68,33 +69,6 @@ html, body {
   height: 100%;
 }
 
-/* kategori kiri - rating kanan */
-.meta-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-/* garis pembatas */
-.divider {
-  border: none;
-  border-top: 1px solid #e0e0e0;
-  margin: 0 0 8px;
-}
-
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.rate {
-  font-size: 13px;
-  font-weight: 500;
-  color: #555;
-}
-
 /* ================= IMAGE ================= */
 .product-img {
   width: 220px;
@@ -112,10 +86,28 @@ html, body {
   height: 100%;
 }
 
-.actions {
-  margin-top: auto;
+/* ================= META ================= */
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
 }
 
+.category,
+.rate {
+  font-size: 13px;
+  font-weight: 500;
+  color: #777;
+  margin: 0;
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+}
 
 /* ================= TEXT ================= */
 .title {
@@ -126,11 +118,11 @@ html, body {
 .title.women { color: #7b1fa2; }
 .title.men { color: #0d47a1; }
 
-.category {
-  font-size: 13px;
-  font-weight: 500;
-  color: #777;
-  margin: 0;
+.text-content {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 8px;
+  padding-right: 6px;
 }
 
 .description {
@@ -139,31 +131,15 @@ html, body {
   color: #444;
 }
 
+/* ================= PRICE ================= */
 .price {
   font-size: 22px;
   font-weight: 700;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin: 8px 0;
 }
 
 .price.women { color: #7b1fa2; }
 .price.men { color: #0d47a1; }
-
-.text-content {
-  flex: 1;
-  overflow-y: auto;
-  margin-bottom: 12px;
-  padding-right: 6px;
-}
-
-.text-content::-webkit-scrollbar {
-  width: 4px;
-}
-
-.text-content::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
 
 /* ================= RATING ================= */
 .rating {
@@ -172,14 +148,8 @@ html, body {
   gap: 8px;
 }
 
-.rate {
-  font-size: 13px;
-  color: #555;
-}
-
 .dots {
   display: flex;
-  align-items: center;
   gap: 6px;
 }
 
@@ -214,7 +184,6 @@ html, body {
 .actions {
   display: flex;
   gap: 12px;
-  margin-top: 0;
 }
 
 /* ================= BUTTON ================= */
@@ -222,50 +191,26 @@ html, body {
 .btn-outline {
   flex: 1;
   height: 36px;
-  padding: 0;
   font-size: 14px;
   font-weight: 700;
   border-radius: 3px;
-  text-align: center;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
 }
 
-/* Filled button */
+/* Filled */
 .btn {
   border: none;
   color: #fff;
 }
 
-.btn:hover {
-  opacity: 0.9;
-}
+.btn.women { background: #720060; }
+.btn.men { background: #002772; }
+.btn.jewelery,
+.btn.electronics { background: #3f3f3f; }
 
-/* Outline button */
+/* Outline */
 .btn-outline {
   background: transparent;
   border: 2px solid;
-}
-
-.btn-outline:hover {
-  background: rgba(0,0,0,0.05);
-}
-
-/* ===== CATEGORY COLORS ===== */
-.btn.women {
-  background: #720060;
-}
-
-.btn.men {
-  background: #002772;
-}
-
-.btn.jewelery,
-.btn.electronics {
-  background: #3f3f3f;
-  color: #ffffff;
 }
 
 .btn-outline.women {
@@ -283,45 +228,124 @@ html, body {
   color: #3f3f3f;
 }
 
-.btn.women:hover {
-  background: #5f004f;
-}
-
-.btn.men:hover {
-  background: #001f5c;
-}
-
-.btn.jewelery:hover,
-.btn.electronics:hover {
-  background: #2f2f2f;
-}
-
-/* Jewelery */
-.btn.jewelery {
-  background: linear-gradient(135deg, #c9a227, #f5d76e);
-  color: #3a2c00;
-  font-weight: 600;
-}
-
-.btn.jewelery:hover {
-  background: linear-gradient(135deg, #b8961e, #e6c65c);
-}
-
-/* Electronics */
-.btn.electronics {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  font-weight: 600;
-}
-
-.btn.electronics:hover {
-  background: linear-gradient(135deg, #16325c, #204a87);
-}
-
 /* ================= UNAVAILABLE ================= */
 .unavailable {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= SAD FACE ================= */
+.sad-face {
+  position: relative;
+  width: 220px;
+  height: 140px;
+  margin-bottom: 18px;
+}
+
+/* EYEBROWS */
+.eyebrows {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eyebrows span {
+  width: 44px;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 8px;
+}
+
+.eyebrows span:first-child {
+  transform: rotate(-12deg);
+}
+
+.eyebrows span:last-child {
+  transform: rotate(12deg);
+}
+
+/* EYES */
+.eyes {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eyes span {
+  width: 28px;
+  height: 28px;
+  background: #e0e0e0;
+  border-radius: 50%;
+}
+
+/* MOUTH */
+.mouth {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 60px;
+  border-top: 10px solid #e0e0e0;
+  border-radius: 0 0 180px 180px;
+}
+
+/* TEXT */
+.unavailable-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
   text-align: center;
-  font-size: 16px;
+}
+
+/* BUTTON */
+.unavailable-btn {
+  height: 36px;
+  flex: none;
+  width: 260px;
+  font-size: 12px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= HOVER EFFECT (ALL BUTTONS) ================= */
+.btn,
+.btn-outline {
+  cursor: pointer;
+  transition: 
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.btn:hover,
+.btn-outline:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.btn:active,
+.btn-outline:active {
+  cursor: pointer;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
 }
 
 /* ================= LOADER ================= */
