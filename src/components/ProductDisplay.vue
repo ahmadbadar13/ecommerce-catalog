@@ -128,7 +128,7 @@ const product = ref({})
 const loading = ref(false)
 const index = ref(1)
 
-/* FETCH API SESUAI INDEX */
+/* FETCH API */
 const fetchProduct = async () => {
   loading.value = true
 
@@ -143,13 +143,11 @@ const fetchProduct = async () => {
   loading.value = false
 }
 
-/* NEXT PRODUCT (1–20 LOOP) */
 const nextProduct = () => {
   index.value = index.value === 20 ? 1 : index.value + 1
   fetchProduct()
 }
 
-/* VALIDASI SESUAI SOAL */
 const isValidProduct = computed(() => {
   return (
     product.value?.category === "men's clothing" ||
@@ -157,7 +155,6 @@ const isValidProduct = computed(() => {
   )
 })
 
-/* CLASS BINDING SESUAI SOAL */
 const themeClass = computed(() => {
   if (product.value?.category === "men's clothing") return 'men-bg'
   if (product.value?.category === "women's clothing") return 'women-bg'
